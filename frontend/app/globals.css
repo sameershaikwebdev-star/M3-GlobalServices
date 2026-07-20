@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root{
+  --background:#050816;
+  --background-secondary:#0B1120;
+  --card-bg:#171C2B;
+  --card-border:#2B3142;
+
+  --primary:#3B82F6;
+  --secondary:#8B5CF6;
+  --accent:#06B6D4;
+  --accent-hover:#38BDF8;
+
+  --gradient-start:#06B6D4;
+  --gradient-end:#2563EB;
+
+  --success:#10B981;
+
+  --white:#ffffff;
+  --muted:#94A3B8;
+
+  --font-heading:var(--font-space);
+  --font-body:var(--font-inter);
+  --font-ui:var(--font-poppins);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+html,
+body{
+  width:100%;
+  min-height:100%;
+  background:var(--background);
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+body{
+  font-family:var(--font-body);
+  position:relative;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font-family:var(--font-ui);
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+canvas{
+  display:block;
+}
+
+/* Shared reveal-on-load animation used across the About page sections */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(16px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.reveal{
+  animation:fadeUp 0.7s ease both;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .reveal{
+    animation:none;
+  }
+}

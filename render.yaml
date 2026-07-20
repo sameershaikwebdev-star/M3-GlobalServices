@@ -1,0 +1,48 @@
+services:
+  # =========================
+  # Backend (Spring Boot)
+  # =========================
+  - type: web
+    name: m3-backend
+    runtime: docker
+
+    rootDir: backend
+    dockerfilePath: Dockerfile
+
+    plan: free
+    autoDeploy: true
+
+    healthCheckPath: /actuator/health
+
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
+
+      - key: SPRING_DATA_MONGODB_URI
+        sync: false
+
+      - key: JWT_SECRET
+        sync: false
+
+      - key: ADMIN_USERNAME
+        sync: false
+
+      - key: ADMIN_PASSWORD
+        sync: false
+
+  # =========================
+  # Frontend (Next.js)
+  # =========================
+  - type: web
+    name: m3-frontend
+    runtime: docker
+
+    rootDir: frontend
+    dockerfilePath: Dockerfile
+
+    plan: free
+    autoDeploy: true
+
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        sync: false

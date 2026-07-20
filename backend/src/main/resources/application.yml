@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: m3global
+
+  data:
+
+
+    mongodb:
+
+    
+      uri: mongodb+srv://m3admin:M3-GLOBAL_IAM-ADMIN@m3global.i55g6dw.mongodb.net/m3global?retryWrites=true&w=majority&appName=M3global
+
+server:
+  port: 8080
+
+jwt:
+  secret: MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWYwMTIzNDU2Nzg5YWJjZGVm
+  expiration: 86400000
+
+logging:
+  level:
+    org.springframework.security: INFO
