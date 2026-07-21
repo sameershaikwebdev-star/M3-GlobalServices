@@ -45,24 +45,30 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
         // Authentication
-        .requestMatchers("/api/auth/**").permitAll()
+        .authorizeHttpRequests(auth -> auth
 
-        // Public APIs
-        .requestMatchers("/api/contact/**").permitAll()
-        .requestMatchers(HttpMethod.POST, "/api/careers/apply").permitAll()
+    // Render Health Check
+    .requestMatchers("/actuator/**").permitAll()
 
-        // Swagger
-        .requestMatchers(
-                "/swagger-ui/**",
-                "/v3/api-docs/**",
-                "/swagger-ui.html"
-        ).permitAll()
+    // Authentication
+    .requestMatchers("/api/auth/**").permitAll()
 
-        // Admin APIs
-        .requestMatchers("/api/admin/**").hasRole("ADMIN")
+    // Public APIs
+    .requestMatchers("/api/contact/**").permitAll()
+    .requestMatchers(HttpMethod.POST, "/api/careers/apply").permitAll()
 
-        // Everything else
-        .anyRequest().authenticated()
+    // Swagger
+    .requestMatchers(
+            "/swagger-ui/**",
+            "/v3/api-docs/**",
+            "/swagger-ui.html"
+    ).permitAll()
+
+    // Admin APIs
+    .requestMatchers("/api/admin/**").hasRole("ADMIN")
+
+    // Everything else
+    .anyRequest().authenticated()
 )
 
                 .httpBasic(Customizer.withDefaults())
