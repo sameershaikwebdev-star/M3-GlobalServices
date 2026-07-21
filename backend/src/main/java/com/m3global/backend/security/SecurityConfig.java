@@ -34,49 +34,47 @@ public class SecurityConfig {
     }
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+   @Bean
+public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-        http
-                .csrf(csrf -> csrf.disable())
+    http
+            .csrf(csrf -> csrf.disable())
 
-                .sessionManagement(session ->
-                        session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+            .sessionManagement(session ->
+                    session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
-                .authorizeHttpRequests(auth -> auth
+            .authorizeHttpRequests(auth -> auth
 
-        // Authentication
-        .authorizeHttpRequests(auth -> auth
+                    // Render Health Check
+                    .requestMatchers("/actuator/**").permitAll()
 
-    // Render Health Check
-    .requestMatchers("/actuator/**").permitAll()
+                    // Authentication
+                    .requestMatchers("/api/auth/**").permitAll()
 
-    // Authentication
-    .requestMatchers("/api/auth/**").permitAll()
+                    // Public APIs
+                    .requestMatchers("/api/contact/**").permitAll()
+                    .requestMatchers(HttpMethod.POST, "/api/careers/apply").permitAll()
 
-    // Public APIs
-    .requestMatchers("/api/contact/**").permitAll()
-    .requestMatchers(HttpMethod.POST, "/api/careers/apply").permitAll()
+                    // Swagger
+                    .requestMatchers(
+                            "/swagger-ui/**",
+                            "/v3/api-docs/**",
+                            "/swagger-ui.html"
+                    ).permitAll()
 
-    // Swagger
-    .requestMatchers(
-            "/swagger-ui/**",
-            "/v3/api-docs/**",
-            "/swagger-ui.html"
-    ).permitAll()
+                    // Admin APIs
+                    .requestMatchers("/api/admin/**").hasRole("ADMIN")
 
-    // Admin APIs
-    .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                    // Everything else
+                    .anyRequest().authenticated()
+            )
 
-    // Everything else
-    .anyRequest().authenticated()
-)
+            .httpBasic(Customizer.withDefaults())
 
-                .httpBasic(Customizer.withDefaults())
+            .addFilterBefore(
+                    jwtAuthenticationFilter,
+                    UsernamePasswordAuthenticationFilter.class);
 
-                .addFilterBefore(
-                        jwtAuthenticationFilter,
-                        UsernamePasswordAuthenticationFilter.class);
-
-        return http.build();
-    }
+    return http.build();
+}
 }
