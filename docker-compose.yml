@@ -14,14 +14,16 @@ services:
       - m3-network
 
   frontend:
-  build:
-    context: ./frontend
-  depends_on:
-    - backend
-  ports:
-    - "3000:3000"
-  environment:
-    NEXT_PUBLIC_API_URL: http://backend:8080
+    build:
+      context: ./frontend
+    container_name: m3-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:3000"
+    environment:
+      NEXT_PUBLIC_API_URL: http://backend:8080
     networks:
       - m3-network
 
