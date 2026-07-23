@@ -22,7 +22,7 @@ export default function CTASection() {
             <SectionHeading
               eyebrow="Let's Connect"
               title="Ready to Scale Your Business With M3?"
-              description="Discover how our Healthcare, BPO, AI, and Software Engineering solutions can optimize your operations and drive global growth."
+              description="Discover how our Healthcare, BPO, and Software Engineering solutions can optimize your operations and drive global growth."
               align="center"
             />
 
