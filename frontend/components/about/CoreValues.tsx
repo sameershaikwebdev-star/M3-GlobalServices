@@ -19,7 +19,7 @@ const VALUES = [
   {
     code: "02",
     title: "Relentless Innovation",
-    desc: "We continuously integrate modern tools, AI capabilities, and smart frameworks to stay ahead.",
+    desc: "We continuously integrate modern tools, and smart frameworks to stay ahead.",
     icon: Sparkles,
   },
   {
