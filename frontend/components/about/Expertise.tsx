@@ -31,18 +31,12 @@ const INDUSTRIES = [
   },
   {
     code: "04",
-    name: "AI & Intelligent Automation",
-    blurb: "Workflow automation, LLM integration, intelligent document processing, and custom AI agents.",
-    icon: Bot,
-  },
-  {
-    code: "05",
     name: "Digital Publishing & Content",
     blurb: "Editorial support, metadata processing, multi-format conversion, and digital asset management.",
     icon: FileText,
   },
   {
-    code: "06",
+    code: "05",
     name: "Cloud & Enterprise Solutions",
     blurb: "Cloud architecture, DevOps pipelines, cybersecurity audits, and managed IT services.",
     icon: Cloud,
