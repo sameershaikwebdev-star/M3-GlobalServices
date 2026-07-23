@@ -78,12 +78,26 @@ canvas{
   }
 }
 
+@keyframes borderSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-border-spin {
+  animation: borderSpin 8s linear infinite;
+}
+
 .reveal{
   animation:fadeUp 0.7s ease both;
 }
 
 @media (prefers-reduced-motion: reduce){
-  .reveal{
+  .reveal,
+  .animate-border-spin {
     animation:none;
   }
 }

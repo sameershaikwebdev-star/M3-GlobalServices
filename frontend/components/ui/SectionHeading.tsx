@@ -20,18 +20,22 @@ export default function SectionHeading({
       } max-w-3xl ${className}`}
     >
       {eyebrow && (
-        <p className="text-lg leading-20 flex items-center justify-center gap-2 font-[family-name:var(--font-mono)] text-xs uppercase tracking-[6px] text-[#06B6D4]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#06B6D4]" />
+        <p
+          className={`flex items-center gap-2 font.mono text-xs uppercase tracking-[5px] text-[#06B6D4] mb-3 ${
+            align === "center" ? "justify-center" : "justify-start"
+          }`}
+        >
+          <span className="h-2 w-2 rounded-full bg-[#06B6D4] shadow-[0_0_10px_#06B6D4]" />
           {eyebrow}
         </p>
       )}
 
-      <h2 className="mt-5 font-[family-name:var(--font-display)] text-4xl font-bold text-white sm:text-5xl">
+      <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl tracking-tight text-white leading-tight">
         {title}
       </h2>
 
       {description && (
-        <p className="mt-6 text-lg leading-8 text-[#94A3B8]">
+        <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#94A3B8]">
           {description}
         </p>
       )}

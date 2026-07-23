@@ -6,31 +6,41 @@ import Expertise from "@/components/about/Expertise";
 import CTASection from "@/components/about/CTASection";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
+
 export default function AboutPage() {
   return (
-    <div className="mx-auto w-full max-w-[1920px]">
-      <Navbar/>
+    <main className="w-full bg-[#050816] text-white overflow-hidden">
+      <Navbar />
+
+      {/* Hero Section */}
       <AboutHero />
 
-      <WhoWeAre />
+      {/* Who We Are */}
+      <div className="my-10 lg:my-16">
+        <WhoWeAre />
+      </div>
 
-      <div className="mt-40 lg:mt-48">
+      {/* Mission & Vision */}
+      <div className="my-10 lg:my-16">
         <MissionVision />
       </div>
 
-      <div className="mt-40 lg:mt-48">
+      {/* Core Values */}
+      <div className="my-10 lg:my-16">
         <CoreValues />
       </div>
 
-      <div className="mt-40 lg:mt-48">
+      {/* Expertise / Industries */}
+      <div className="my-10 lg:my-16">
         <Expertise />
       </div>
 
-      <div className="mt-48 lg:mt-56">
+      {/* CTA Section */}
+      <div className="my-10 lg:my-16">
         <CTASection />
       </div>
 
       <Footer />
-    </div>
+    </main>
   );
 }

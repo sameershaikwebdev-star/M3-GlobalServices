@@ -17,7 +17,7 @@ export default function Section({ bg = "primary", className, children }: Section
   return (
     <section
       className={cn(
-        "py-24 md:py-32",
+        "py-20 md:py-28 lg:py-32 border-t border-white/10 relative",
         bg === "primary" ? "bg-[#050816]" : "bg-[#0B1120]",
         className
       )}
