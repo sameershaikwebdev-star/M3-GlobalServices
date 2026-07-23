@@ -61,13 +61,13 @@ export default function MissionVision() {
           </h3>
 
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#94A3B8]">
-            To be the recognized leader in global business and technology services, pioneering innovative AI-driven tools and digital transformation processes that redefine industry standards worldwide.
+            To be the recognized leader in global business and technology services,digital transformation processes that redefine industry standards worldwide.
           </p>
 
           <ul className="mt-8 space-y-3 border-t border-[#2B3142] pt-6 text-sm text-[#CBD5E1]">
             <li className="flex items-center gap-3">
               <CheckCircle className="h-4 w-4 text-[#38BDF8] shrink-0" />
-              Pioneering intelligent automation & digital workflows
+                  digital workflows
             </li>
             <li className="flex items-center gap-3">
               <CheckCircle className="h-4 w-4 text-[#38BDF8] shrink-0" />
