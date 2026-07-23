@@ -40,7 +40,7 @@ export default function AboutHero() {
             </h1>
 
             <p className="mt-6 max-w-2xl text-base text-[#94A3B8] sm:text-lg lg:text-xl leading-relaxed">
-              We are a trusted global partner providing Healthcare Services, BPO, Software Development, AI Solutions, and Digital Transformation for enterprises worldwide.
+              We are a trusted global partner providing Healthcare Services, BPO, Software Development, and Digital Transformation for enterprises worldwide.
             </p>
 
             {/* Quick highlights */}
