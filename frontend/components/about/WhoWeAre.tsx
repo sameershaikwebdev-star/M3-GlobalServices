@@ -5,11 +5,6 @@ import { Cpu, ShieldCheck, Zap, Layers } from "lucide-react";
 
 const HIGHLIGHTS = [
   {
-    icon: Cpu,
-    title: "AI & Tech Integration",
-    desc: "Leveraging state-of-the-art AI tooling and modern software architectures.",
-  },
-  {
     icon: ShieldCheck,
     title: "Strict Compliance",
     desc: "Rigorous adherence to global data privacy and security standards.",
@@ -59,7 +54,7 @@ export default function WhoWeAre() {
           <SectionHeading
             eyebrow="Who We Are"
             title="Technology Driven Business Solutions"
-            description="M3 Global Services is a technology-driven business solutions company specializing in Healthcare Services, BPO, Software Development, AI Solutions, and Digital Publishing. We empower enterprise clients across the globe."
+            description="M3 Global Services is a technology-driven business solutions company specializing in Healthcare Services, BPO, Software Developments, and Digital Publishing. We empower enterprise clients across the globe."
             align="left"
           />
 
