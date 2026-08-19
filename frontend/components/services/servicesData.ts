@@ -27,7 +27,6 @@ export const services: Service[] = [
       "Insurance Verification",
     ],
   },
-
   {
     id: "bpo",
     subtitle: "BPO Services",
@@ -44,7 +43,6 @@ export const services: Service[] = [
       "Back Office Operations",
     ],
   },
-
   {
     id: "software",
     subtitle: "Software Engineering",
@@ -71,7 +69,6 @@ export const services: Service[] = [
       "Git",
     ],
   },
-
   {
     id: "publishing",
     subtitle: "Data & Publishing",
