@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import { Service } from "./servicesData";
@@ -40,7 +38,6 @@ export default function ServiceCard({ service }: Props) {
         {service.description}
       </p>
 
-      {/* LIST */}
       {service.type === "list" && (
         <ul className="mt-8 space-y-3 text-lg text-slate-200">
           {service.items.map((item) => (
@@ -52,7 +49,6 @@ export default function ServiceCard({ service }: Props) {
         </ul>
       )}
 
-      {/* TAGS */}
       {service.type === "tags" && (
         <div className="mt-8 flex flex-wrap gap-3">
           {service.items.map((item) => (
@@ -66,7 +62,6 @@ export default function ServiceCard({ service }: Props) {
         </div>
       )}
 
-      {/* GRID */}
       {service.type === "grid" && (
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
           {service.items.map((item) => (
@@ -84,24 +79,18 @@ export default function ServiceCard({ service }: Props) {
   );
 
   return (
-    <>
-      <Container className="grid max-w-6xl grid-cols-1 items-stretch gap-10 lg:grid-cols-2 lg:gap-14">
-        {service.reverse ? (
-          <>
-            {content}
-            {image}
-          </>
-        ) : (
-          <>
-            {image}
-            {content}
-          </>
-        )}
-      </Container>
-
-      <Container className="my-14 max-w-6xl lg:my-18">
-        <div className="h-px w-full bg-cyan-400/30" />
-      </Container>
-    </>
+    <Container className="grid max-w-6xl grid-cols-1 items-stretch gap-10 lg:grid-cols-2 lg:gap-14">
+      {service.reverse ? (
+        <>
+          {content}
+          {image}
+        </>
+      ) : (
+        <>
+          {image}
+          {content}
+        </>
+      )}
+    </Container>
   );
 }
